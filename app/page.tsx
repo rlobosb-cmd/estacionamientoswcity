@@ -204,9 +204,7 @@ const loadAllReservations = async () => {
 
   return (
     <main style={{ padding: 18, fontFamily: "system-ui, sans-serif" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 900, marginBottom: 8 }}>
-        Disponibilidad de Estacionamientos
-      </h1>
+     
 	{/* Mapa visual de estacionamientos */}
 <div
   style={{
