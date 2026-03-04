@@ -257,11 +257,6 @@ const loadAllReservations = async () => {
           {loading ? "Cargando..." : prettyDate(dateYmd)}
         </span>
       </div>
-
-      {/* Tablero */}
-      <div style={{ marginTop: 14 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
-          {spots.map((spot) => {
             const r = bySpot.get(spot);
             const ocupado = !!r;
 
