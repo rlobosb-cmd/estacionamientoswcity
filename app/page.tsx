@@ -206,54 +206,7 @@ const loadAllReservations = async () => {
     <main style={{ padding: 18, fontFamily: "system-ui, sans-serif" }}>
      
 	{/* Mapa visual de estacionamientos */}
-<div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-    gap: 10,
-    marginTop: 12,
-    marginBottom: 16,
-  }}
->
-  {spots.map((s) => {
-    const r = bySpot.get(s);
-    const ocupado = !!r;
-
-    return (
-      <button
-        key={s}
-        onClick={() => {
-          if (ocupado) return;
-          setForm((p: any) => ({ ...p, spot: s }));
-          setOpen(true);
-        }}
-        style={{
-          textAlign: "left",
-          padding: 12,
-          borderRadius: 12,
-          border: "1px solid #ddd",
-          background: ocupado ? "#ffe8e8" : "#e9f8ee",
-          cursor: ocupado ? "not-allowed" : "pointer",
-        }}
-      >
-        <div style={{ fontWeight: 900, fontSize: 16 }}>
-          {building} · Est {s}{" "}
-          <span style={{ marginLeft: 8 }}>
-            {ocupado ? "OCUPADO 🔴" : "LIBRE 🟢"}
-          </span>
-        </div>
-
-        <div style={{ marginTop: 6, fontSize: 13, opacity: 0.85 }}>
-          {ocupado
-            ? `Hasta ${r!.end_at.slice(0, 10)} · Depto ${r!.depto ?? "-"}`
-            : "Disponible para reservar"}
-        </div>
-      </button>
-    );
-  })}
-</div>
-{/* Pestañas de edificio */}
-<div style={{ display: "flex", gap: 8, marginTop: 10, marginBottom: 10 }}>
+    
   {(["STEPKE", "BARCELONA", "TRIZANO"] as const).map((b) => (
     <button
       key={b}
